@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Autor: Aristóteles Terceiro Neto - Machine Learning - Classificacao de Limite de Credito</title>
+<!-- Referência ao Bootstrap CDN -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Definição de estilo para fonte -->
+<style>
+        .lb-sm{
+            font-size: 9pt;
+            font-family: "Helvetica";
+        }
+</style>
+</head>
+<body>
+   <!-- div container -->
+   <div class="container">
+       <!-- Criação de uma div painel -->
+       <div class="panel panel-info">
+           <!-- Título da div painel -->
+           <div class="panel-heading"><b> DTP - Publicação de Modelos de Machine Learning - Classificação de Limite de Crédito com Naive Bayes</b></div>
+           <!-- Corpo da div painel -->
+           <div class="panel-body">
+               <div id="form-container">
+                   <!-- Definição -->
+                   <form action="/form/" method="post">
+                       <div class="form-group input-group-sm">
+					   
+					   <!-- Renda -->
+                           <label class="lb-sm">Renda?</label>
+                           <input name="renda" type="text" class="form-control" placeholder="Renda" required />
+                       </div>
+                       <div class="form-group input-group-sm">
+					   
+                           <!-- Historico de Crédito -->
+                           <label class="lb-sm">Historico_credito:</label>
+                           <input name="historico_credito" type="text" class="form-control" placeholder="Historico de Crédito" required />
+                       </div>
+                       <div class="form-group input-group-sm">
+
+                           <!-- Campo para a Divida -->
+                           <label class="lb-sm">Divida?</label>
+                           <select name="divida" class="form-control">
+                               <option value="0">--Selecione--</option>
+                               <option value="1">Baixa</option>
+                               <option value="2">Alta</option>
+                           </select>
+                       </div>
+                       <div class="form-group input-group-sm">
+
+                           <!-- Campo para saber Garantias -->
+                           <label class="lb-sm">Garantias?</label>
+                           <select name="garantias" class="form-control">
+                               <option value="0">--Selecione--</option>
+                               <option value="1">Não</option>
+                               <option value="2">Sim</option>
+                           </select>
+                       </div>
+                       <div class="form-group input-group-sm">
+
+                       <hr />
+
+                       <div class="form-group input-group-sm">
+                           <button type="submit" class="btn btn-sm btn-primary pull-right">Classificar</button>
+                       </div>
+
+                       <!-- Apresentação dos Resultados -->
+                       <div class="form-group">
+                           <label>Resultado:</label>
+                       </div>
+
+                       <!-- Apresentação do nome do animal -->
+                       <div class="form-group">
+                           <span class="lb-sm"><strong>Risco:</strong> {{risco}}</span>
+                       </div>
+
+                       <!-- Apresentação da classificação do animal -->
+                       <div class="form-group">
+                           <span class="lb-sm"><strong>Classificacao:</strong> {{classificacao}}</span>
+
+                       <!-- Apresentação do valor da probabilidade-->
+                       <div class="form-group">
+                           <span class="lb-sm"><strong>Probabilidade:</strong> {{probabilidade}}</span>
+
+                       </div>
+                    </form>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </body>
+</html>
