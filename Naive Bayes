@@ -1,0 +1,168 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled9.ipynb",
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/AristotelesTN/MBA/blob/master/Naive%20Bayes\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "GQyamBykDevf",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "from sklearn.naive_bayes import GaussianNB\n",
+        "import numpy as np\n"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "auGPGo1VDr86",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 238
+        },
+        "outputId": "e24f0bf0-4f30-431d-9e00-c5c7cc4102df"
+      },
+      "source": [
+        "#assigning predictor and target variables\n",
+        "x = np.array([[-3,7],[1,5], [1,2], [-2,0], [2,3], [-4,0], [-1,1], [1,1], [-2,2], [2,7], [-4,1], [-2,7]])\n",
+        "y = np.array([3, 3, 3, 3, 4, 3, 3, 4, 3, 4, 4, 4])\n",
+        "\n",
+        "print(x)\n",
+        "print(y)"
+      ],
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[[-3  7]\n",
+            " [ 1  5]\n",
+            " [ 1  2]\n",
+            " [-2  0]\n",
+            " [ 2  3]\n",
+            " [-4  0]\n",
+            " [-1  1]\n",
+            " [ 1  1]\n",
+            " [-2  2]\n",
+            " [ 2  7]\n",
+            " [-4  1]\n",
+            " [-2  7]]\n",
+            "[3 3 3 3 4 3 3 4 3 4 4 4]\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "QxKWsLIlD1CG",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "#Create a Gaussian Classifier\n",
+        "model = GaussianNB()\n"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "MAmq2cxhEDWI",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "32f18b98-f1f0-4f99-c6cd-78f48614906f"
+      },
+      "source": [
+        "# Train the model using the training sets\n",
+        "model.fit(x, y)"
+      ],
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "GaussianNB(priors=None, var_smoothing=1e-09)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 5
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "dSt9vq6OEG8H",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "ebc6c95a-0eb7-4236-f2cd-d4e99d231c31"
+      },
+      "source": [
+        "#Predict Output\n",
+        "predicted = model.predict([[1,2],[3,4]])\n",
+        "print (predicted)"
+      ],
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[3 4]\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "f90T_Xc9EMS2",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": []
+    }
+  ]
+}
